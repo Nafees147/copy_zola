@@ -1,0 +1,16 @@
+export const PATHS = {
+  HOME: '/',
+  LANDING: '/landing',
+  AUTH: '/auth',
+  VIRTUAL_PHOTOSHOOT: '/virtual_photoshoot',
+  STYLE_SCENE: '/stylescene',
+  ASSET_GENERATOR: '/asset_generator',
+  CATALOG_FORGED: '/catalog_forged',
+  GALLERY: '/gallery',
+  ASSET_COLLECTION: '/asset_collection',
+  PRICING: '/pricing',
+  SETTINGS: '/settings',
+  ABOUT: '/about',
+  MODEL_GALLERY: '/model_gallery',
+  BACKGROUND_GALLERY: '/background_gallery',
+};
