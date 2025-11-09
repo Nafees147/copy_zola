@@ -17,11 +17,13 @@ const serverDistPath = resolveFromRoot('dist/server');
 const serverEntryPath = path.join(serverDistPath, 'entry-server.js');
 
 // Add compression middleware
-app.use(compression());
+// FIX: Explicitly add path to resolve express.use() overload ambiguity.
+app.use('/', compression());
 
 // Serve static files from the client build directory
 // Vercel's routing will handle this, but it's good practice for local emulation
-app.use(express.static(clientDistPath, { index: false }));
+// FIX: Explicitly add path to resolve express.use() overload ambiguity.
+app.use('/', express.static(clientDistPath, { index: false }));
 
 // Universal SSR handler for all other requests
 app.use('*', async (req, res) => {

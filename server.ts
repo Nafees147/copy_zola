@@ -22,10 +22,12 @@ async function createServer() {
   } else {
     // Production server logic
     // Add compression middleware for better performance
-    app.use((await import('compression')).default());
+    // FIX: Explicitly add path to resolve express.use() overload ambiguity.
+    app.use('/', (await import('compression')).default());
     // Serve static files from the client build directory
     // index: false prevents express from automatically serving index.html on '/'
-    app.use(
+    // FIX: Explicitly add path to resolve express.use() overload ambiguity.
+    app.use('/',
       express.static(path.resolve(__dirname, 'dist/client'), {
         index: false,
       })
